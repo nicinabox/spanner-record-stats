@@ -51,6 +51,6 @@ describe('mileage', function () {
   })
 
   it('current mileage', function () {
-    expect(currentProjectedMileage(milesPerDaySet(sortedRecords), last(sortedRecords)), 'to equal', 140093.63033966685)
+    expect(currentProjectedMileage(milesPerDaySet(sortedRecords), last(sortedRecords)), 'to equal', 139482.60717309467)
   })
 })
