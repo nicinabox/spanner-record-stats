@@ -5,7 +5,7 @@ import records from '../data/mini.json'
 import milesPerDay from '../lib/milesPerDay'
 import milesPerYear from '../lib/milesPerYear'
 import milesPerDaySet from '../lib/milesPerDaySet'
-import currentMileage from '../lib/currentMileage'
+import currentProjectedMileage from '../lib/currentProjectedMileage'
 import average from '../lib/average'
 import standardDeviation from '../lib/standardDeviation'
 import confidenceInterval from '../lib/confidenceInterval'
@@ -51,6 +51,6 @@ describe('mileage', function () {
   })
 
   it('current mileage', function () {
-    expect(currentMileage(milesPerDaySet(sortedRecords), last(sortedRecords)), 'to equal', 140093.63033966685)
+    expect(currentProjectedMileage(milesPerDaySet(sortedRecords), last(sortedRecords)), 'to equal', 140093.63033966685)
   })
 })
