@@ -1,4 +1,4 @@
-import { sortBy, reject, takeRight, first, last, compose } from 'lodash'
+import { sortBy, reject, partialRight, takeRight, first, last, compose } from 'lodash'
 import expect from 'unexpected'
 import moment from 'moment'
 import records from '../data/mini.json'
@@ -9,6 +9,8 @@ import currentProjectedMileage from '../lib/currentProjectedMileage'
 import average from '../lib/average'
 import standardDeviation from '../lib/standardDeviation'
 import confidenceInterval from '../lib/confidenceInterval'
+
+const ACTUAL_MILEAGE = 137854
 
 var sortedRecords = sortBy(reject(records, (r) => !r.mileage), 'mileage')
 
@@ -51,6 +53,13 @@ describe('mileage', function () {
   })
 
   it('current mileage', function () {
-    expect(currentProjectedMileage(milesPerDaySet(sortedRecords), last(sortedRecords)), 'to equal', 139482.60717309467)
+    const ONE_PERCENT = ACTUAL_MILEAGE * 0.005
+    var bounds = [ACTUAL_MILEAGE - ONE_PERCENT, ACTUAL_MILEAGE + ONE_PERCENT]
+
+    var lastSeason = compose(partialRight(takeRight, 6), milesPerDaySet)
+
+    expect(currentProjectedMileage(lastSeason(sortedRecords), last(sortedRecords)),
+      'to be within',
+      bounds[0], bounds[1])
   })
 })
