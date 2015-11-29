@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
-    "analyze": "babel-node reporter.js"
+    "analyze": "babel-node tasks/reporter.js",
+    "csv": "babel-node tasks/csv.js"
   },
   "keywords": [],
   "author": "Nic Aitch <nic@nicinabox.com> (nicinabox.com)",

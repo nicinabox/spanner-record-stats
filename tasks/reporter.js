@@ -1,14 +1,14 @@
 import fs from 'fs'
 import { sortBy, reject, compose, last, takeRight, partialRight } from 'lodash'
 import Table from 'cli-table'
-import milesPerDay from './lib/milesPerDay'
-import milesPerYear from './lib/milesPerYear'
-import milesPerDaySet from './lib/milesPerDaySet'
-import currentProjectedMileage from './lib/currentProjectedMileage'
-import average from './lib/average'
-import standardDeviation from './lib/standardDeviation'
-import confidenceInterval from './lib/confidenceInterval'
-import elapsedDays from './lib/elapsedDays'
+import milesPerDay from '../lib/milesPerDay'
+import milesPerYear from '../lib/milesPerYear'
+import milesPerDaySet from '../lib/milesPerDaySet'
+import currentProjectedMileage from '../lib/currentProjectedMileage'
+import average from '../lib/average'
+import standardDeviation from '../lib/standardDeviation'
+import confidenceInterval from '../lib/confidenceInterval'
+import elapsedDays from '../lib/elapsedDays'
 
 const file = fs.readFileSync('./data/' + process.argv[2])
 const ACTUAL_MILEAGE = process.argv[3] || 0
