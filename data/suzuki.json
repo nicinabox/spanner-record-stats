@@ -1,0 +1,36 @@
+[
+  {
+    "_id": "55d7815494209d030078dbf9",
+    "vehicleId": "55d7807d94209d030078dbf8",
+    "notes": "Purchase",
+    "mileage": 3724,
+    "date": "2015-08-21T00:00:00.000Z",
+    "__v": 0,
+    "cost": 3700
+  },
+  {
+    "_id": "55dbd2d620812f030007e7e8",
+    "vehicleId": "55d7807d94209d030078dbf8",
+    "notes": "Flush brakes",
+    "cost": null,
+    "mileage": 3880,
+    "date": "2015-08-25T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "55e1f199d6730c0300e12877",
+    "vehicleId": "55d7807d94209d030078dbf8",
+    "notes": "New tires (Pirelli Diablo Rosso II 140/70 rear 120/70 front). Install quick turn throttle. Install Oury grips.",
+    "mileage": 3929,
+    "date": "2015-09-02T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "55e1f1ced6730c0300e12878",
+    "vehicleId": "55d7807d94209d030078dbf8",
+    "notes": "Upgrade tail light and rear turn signals (DCS LED)",
+    "mileage": 3900,
+    "date": "2015-08-28T00:00:00.000Z",
+    "__v": 0
+  }
+]

@@ -1,0 +1,108 @@
+[
+  {
+    "_id": "547f793990b3540200cfc0bd",
+    "vehicleId": "547f756c90b3540200cfc0b8",
+    "notes": "New rear tire - Avon Roadrider 130/80V-17",
+    "mileage": 3440,
+    "date": "2014-10-05T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "547f793990b3540200cfc0be",
+    "vehicleId": "547f756c90b3540200cfc0b8",
+    "notes": "New front tire - Avon Roadrider 100/90V-18",
+    "mileage": 3470,
+    "date": "2014-10-08T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "547f793990b3540200cfc0bf",
+    "vehicleId": "547f756c90b3540200cfc0b8",
+    "notes": "Oil, oil filter, gearbox oil, rear drive oil, valve adjustment, torque heads",
+    "mileage": 667,
+    "date": "2014-04-19T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "547f793990b3540200cfc0c0",
+    "vehicleId": "547f756c90b3540200cfc0b8",
+    "notes": "Add Mistral exhaust",
+    "mileage": 3000,
+    "date": "2014-05-24T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "547f793990b3540200cfc0c1",
+    "vehicleId": "547f756c90b3540200cfc0b8",
+    "notes": "Purchase",
+    "mileage": 1,
+    "date": "2014-03-01T00:00:00.000Z",
+    "__v": 0,
+    "cost": 8500
+  },
+  {
+    "_id": "547f793990b3540200cfc0c2",
+    "vehicleId": "547f756c90b3540200cfc0b8",
+    "notes": "Add Tommaselli clip ons",
+    "mileage": 0,
+    "date": "2014-05-24T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "547f793990b3540200cfc0c3",
+    "vehicleId": "547f756c90b3540200cfc0b8",
+    "notes": "Adjust throttle play, mirrors and levers",
+    "mileage": 37,
+    "date": "2014-03-02T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "55565d0b377d84030001bb72",
+    "vehicleId": "547f756c90b3540200cfc0b8",
+    "notes": "Install Guzzi racer rearsets",
+    "mileage": 4998,
+    "date": "2015-04-28T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "5556adec377d84030001bb74",
+    "vehicleId": "547f756c90b3540200cfc0b8",
+    "notes": "Service II. Change oil, oil filter, air filter, spark plugs. Adjust valves",
+    "mileage": 5073,
+    "date": "2015-05-16T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "5570e0f548e0e0030097c0fe",
+    "vehicleId": "547f756c90b3540200cfc0b8",
+    "notes": "Tail tidy. Remove extra reflectors, remove license plate light, modify plate bracket to sit flush, modify tail light to shine light onto plate. Shorten turn signal stalks.",
+    "mileage": 5545,
+    "date": "2015-05-30T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "5570e11e48e0e0030097c0ff",
+    "vehicleId": "547f756c90b3540200cfc0b8",
+    "notes": "Add smoke turn signal lenses",
+    "mileage": 5560,
+    "date": "2015-06-04T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "55cb4969895fd40300e3b719",
+    "vehicleId": "547f756c90b3540200cfc0b8",
+    "notes": "Add new headlight bracket from Guzzitech",
+    "mileage": 5800,
+    "date": "2015-08-09T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "55f2be889213df0300ce92dd",
+    "vehicleId": "547f756c90b3540200cfc0b8",
+    "notes": "CO trim, auto learning params reset through guzzidiag. ",
+    "cost": null,
+    "mileage": 6065,
+    "date": "2015-09-08T00:00:00.000Z",
+    "__v": 0
+  }
+]
