@@ -12,7 +12,8 @@ var bounds      = (n, variance) => n + variance
 var lower       = (mi) => bounds(mi, -variance(mi))
 var upper       = (mi) => bounds(mi, variance(mi))
 var cpm         = (records) => currentProjectedMileage(lastSeason(records), last(records))
-var lastSeason  = compose(partialRight(takeRight, 4), milesPerDaySet)
+
+var lastSeason  = compose(partialRight(takeRight, 5), milesPerDaySet)
 var variance    = partialRight(percent, 1)
 
 describe('mini', function () {
@@ -21,8 +22,8 @@ describe('mini', function () {
 
   it('cpm should be within 1%', function () {
     expect(cpm(records), 'to be within', lower(ACTUAL_MILEAGE), upper(ACTUAL_MILEAGE))
-  });
-});
+  })
+})
 
 describe('guzzi', function () {
   const ACTUAL_MILEAGE = 7554
@@ -30,8 +31,8 @@ describe('guzzi', function () {
 
   it('cpm should be within 1%', function () {
     expect(cpm(records), 'to be within', lower(ACTUAL_MILEAGE), upper(ACTUAL_MILEAGE))
-  });
-});
+  })
+})
 
 describe('suzuki', function () {
   const ACTUAL_MILEAGE = 4413
@@ -39,5 +40,5 @@ describe('suzuki', function () {
 
   it('cpm should be within 1%', function () {
     expect(cpm(records), 'to be within', lower(ACTUAL_MILEAGE), upper(ACTUAL_MILEAGE))
-  });
-});
+  })
+})

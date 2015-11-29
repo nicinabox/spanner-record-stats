@@ -1,6 +1,5 @@
-import { sortBy, reject, partialRight, takeRight, first, last, compose } from 'lodash'
+import { sortBy, reject, partialRight, takeRight, last, compose } from 'lodash'
 import expect from 'unexpected'
-import moment from 'moment'
 import records from '../data/mini.json'
 import milesPerDay from '../lib/milesPerDay'
 import milesPerYear from '../lib/milesPerYear'
@@ -27,7 +26,7 @@ describe('formulas', function () {
 
   it('confidence interval', function () {
     var ci = compose(confidenceInterval, milesPerDaySet)
-    expect(ci(sortedRecords), 'to equal', 5.76102402754722)
+    expect(ci(sortedRecords), 'to equal', 6.843398238783363)
   })
 })
 

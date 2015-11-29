@@ -15,4 +15,4 @@ var csv = [['date', 'mileage']]
   .concat(dataset)
   .map((d) => d.join(',')).join('\n')
 
-console.log(csv);
+console.log(csv)
