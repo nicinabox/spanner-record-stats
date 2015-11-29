@@ -10,7 +10,7 @@ import standardDeviation from './lib/standardDeviation'
 import confidenceInterval from './lib/confidenceInterval'
 import elapsedDays from './lib/elapsedDays'
 
-const file = fs.readFileSync(process.argv[2])
+const file = fs.readFileSync('./data/' + process.argv[2])
 const ACTUAL_MILEAGE = process.argv[3] || 0
 
 var records = sortBy(reject(JSON.parse(file.toString()), (r) => !r.mileage), 'mileage')
@@ -18,7 +18,6 @@ var records = sortBy(reject(JSON.parse(file.toString()), (r) => !r.mileage), 'mi
 var table = new Table()
 
 var last5 = partialRight(takeRight, 5)
-var last6 = partialRight(takeRight, 6)
 var last10 = partialRight(takeRight, 10)
 
 var toFixed = (number) => Number(number.toFixed(2))
@@ -29,7 +28,7 @@ var projectedAccuracy = (actual, projected) => {
 
 var mpd = compose(toFixed, average, last5, milesPerDaySet)
 var mpy = compose(toFixed, milesPerYear, last5, milesPerDaySet)
-var cpm = compose(toFixed, partialRight(currentProjectedMileage, last(records)), last6, milesPerDaySet)
+var cpm = compose(toFixed, partialRight(currentProjectedMileage, last(records)), partialRight(takeRight, 4), milesPerDaySet)
 var ci  = compose(toFixed, confidenceInterval, last5, milesPerDaySet)
 var sd  = compose(toFixed, standardDeviation, last5, milesPerDaySet)
 

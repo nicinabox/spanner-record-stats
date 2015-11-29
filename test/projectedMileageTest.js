@@ -6,7 +6,7 @@ import rawMiniRecords from '../data/mini.json'
 import rawGuzziRecords from '../data/guzzi.json'
 import rawSuzukiRecords from '../data/suzuki.json'
 
-var lastSeason = compose(partialRight(takeRight, 6), milesPerDaySet)
+var lastSeason = compose(partialRight(takeRight, 4), milesPerDaySet)
 
 var sortRecords = (records) => {
   return sortBy(reject(records, ({mileage}) => !mileage), 'mileage')
