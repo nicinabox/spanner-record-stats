@@ -2,9 +2,6 @@ import { last, takeRight, partialRight, sortBy, reject, compose } from 'lodash'
 import expect from 'unexpected'
 import milesPerDaySet from '../lib/milesPerDaySet'
 import currentProjectedMileage from '../lib/currentProjectedMileage'
-import rawMiniRecords from '../data/mini.json'
-import rawGuzziRecords from '../data/guzzi.json'
-import rawSuzukiRecords from '../data/suzuki.json'
 
 var sortRecords = (records) => sortBy(reject(records, ({mileage}) => !mileage), 'mileage')
 var percent     = (n, p) => n * (p / 100)
@@ -13,32 +10,25 @@ var lower       = (mi) => bounds(mi, -variance(mi))
 var upper       = (mi) => bounds(mi, variance(mi))
 var cpm         = (records) => currentProjectedMileage(lastSeason(records), last(records))
 
+var projectedAccuracy = (actual, projected) => (actual - projected) / actual * 100
+
 var lastSeason  = compose(partialRight(takeRight, 5), milesPerDaySet)
 var variance    = partialRight(percent, 1)
 
-describe('mini', function () {
-  const ACTUAL_MILEAGE = 137854
-  var records = sortRecords(rawMiniRecords)
+var runSuite = function (name, actualMileage, rawRecords) {
+  describe(name, function () {
+    var records = sortRecords(rawRecords)
 
-  it('cpm should be within 1%', function () {
-    expect(cpm(records), 'to be within', lower(ACTUAL_MILEAGE), upper(ACTUAL_MILEAGE))
+    it('cpm should be within 1%', function () {
+      expect(projectedAccuracy(actualMileage, cpm(records)), 'to be within', -1, 1)
+    })
+
+    it('should be in range', function () {
+      expect(cpm(records), 'to be within', lower(actualMileage), upper(actualMileage))
+    })
   })
-})
+}
 
-describe('guzzi', function () {
-  const ACTUAL_MILEAGE = 7554
-  var records = sortRecords(rawGuzziRecords)
-
-  it('cpm should be within 1%', function () {
-    expect(cpm(records), 'to be within', lower(ACTUAL_MILEAGE), upper(ACTUAL_MILEAGE))
-  })
-})
-
-describe('suzuki', function () {
-  const ACTUAL_MILEAGE = 4413
-  var records = sortRecords(rawSuzukiRecords)
-
-  it('cpm should be within 1%', function () {
-    expect(cpm(records), 'to be within', lower(ACTUAL_MILEAGE), upper(ACTUAL_MILEAGE))
-  })
-})
+runSuite('mini', 137854, require('../data/mini.json'))
+runSuite('guzzi', 7554, require('../data/guzzi.json'))
+runSuite('suzuki', 4413, require('../data/suzuki.json'))
