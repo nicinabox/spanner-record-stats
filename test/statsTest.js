@@ -25,6 +25,6 @@ describe('mileage', function () {
 
   it('miles per year', function () {
     var mpy = compose(milesPerYear, milesPerDaySet)
-    expect(mpy(sortedRecords), 'to equal', 9465.42255830127)
+    expect(mpy(sortedRecords), 'to equal', 9446.255771092068)
   })
 })
